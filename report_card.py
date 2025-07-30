@@ -36,6 +36,16 @@ def load_from_file():
 # Call this before starting
 load_from_file()
 
+def get_grade(avg):
+    if avg >= 90: return "A"
+    elif avg >= 75: return "B"
+    elif avg >= 60: return "C"
+    else: return "D"
+
+def show_students():
+    for s in students:
+        grade = get_grade(s['avg'])
+        print(f"{s['name']} - Marks: {s['marks']} - Avg: {s['avg']:.2f} - Grade: {grade}")
 
 while True:
     print("\n1. Add Student\n2. Show All\n3. Exit")
